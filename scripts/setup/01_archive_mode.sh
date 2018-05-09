@@ -5,5 +5,6 @@ sqlplus / as sysdba << EOF
     alter database archivelog;
     alter database open;
     archive log list;
+    show con_name
     exit;
 EOF

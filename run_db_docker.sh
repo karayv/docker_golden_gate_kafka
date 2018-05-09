@@ -1,7 +1,9 @@
 mkdir -p db/oradata
 mkdir -p db/scripts/setup
 mkdir -p db/scripts/startup
-mkdir -p db/ogg
+mkdir -p db/ogg/dirprm
+cp scripts/setup/* db/scripts/setup/
+cp dirprm/* db/ogg/dirprm/
 
 docker run --name gg \
 -p 1521:1521 -p 5500:5500 \
