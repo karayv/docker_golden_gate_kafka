@@ -1,5 +1,5 @@
 ####################################################################
-## Copyright(c) Oracle Corporation 2013. All rights reserved.     ##
+## Copyright(c) Oracle Corporation 2017. All rights reserved.     ##
 ##                                                                ##
 ## Specify values for the variables listed below to customize     ##
 ## your installation.                                             ##
@@ -13,13 +13,19 @@
 ## own this installation to protect any sensitive input values.   ##
 ##                                                                ##
 ####################################################################
+
 #-------------------------------------------------------------------------------
-# Do not change the following system generated value. #-------------------------------------------------------------------------------
-oracle.install.responseFileVersion=/oracle/install/rspfmt_ogginstall_response_
-schema_v12_1_2################################################################################
-##                                                                            ##
-## Oracle GoldenGate installation option and details                          ####                                                                            ##
+# Do not change the following system generated value. 
+#-------------------------------------------------------------------------------
+oracle.install.responseFileVersion=/oracle/install/rspfmt_ogginstall_response_schema_v12_1_2
+
+
 ################################################################################
+##                                                                            ##
+## Oracle GoldenGate installation option and details                          ##
+##                                                                            ##
+################################################################################
+
 #-------------------------------------------------------------------------------
 # Specify the installation option.
 # Specify ORA12c for installing Oracle GoldenGate for Oracle Database 12c and
@@ -28,12 +34,12 @@ schema_v12_1_2##################################################################
 INSTALL_OPTION=ORA12c
 
 #-------------------------------------------------------------------------------
-# Specify a location to install Oracle GoldenGate#-------------------------------------------------------------------------------
+# Specify a location to install Oracle GoldenGate
+#-------------------------------------------------------------------------------
 SOFTWARE_LOCATION=/opt/oracle/product/ogg
 
 #-------------------------------------------------------------------------------
-# Specify true to start the manager after installation.
- 
+# Specify true to start the manager after installation. 
 #-------------------------------------------------------------------------------
 START_MANAGER=false
 
@@ -41,13 +47,14 @@ START_MANAGER=false
 # Specify a free port within the valid range for the manager process.
 # Required only if START_MANAGER is true.
 #-------------------------------------------------------------------------------
-#MANAGER_PORT=7809
+MANAGER_PORT=7809
 
 #-------------------------------------------------------------------------------
 # Specify the location of the Oracle Database.
 # Required only if START_MANAGER is true.
 #-------------------------------------------------------------------------------
 DATABASE_LOCATION=/opt/oracle/product/12.1.0.2/dbhome_1
+
 
 ################################################################################
 ##                                                                            ##
@@ -58,12 +65,14 @@ DATABASE_LOCATION=/opt/oracle/product/12.1.0.2/dbhome_1
 
 #-------------------------------------------------------------------------------
 # Specify the location which holds the install inventory files.
-# This is an optional parameter if installing on# Windows based Operating System.
+# This is an optional parameter if installing on
+# Windows based Operating System.
 #-------------------------------------------------------------------------------
-#INVENTORY_LOCATION=
+INVENTORY_LOCATION=
 
 #-------------------------------------------------------------------------------
-# UNIX group to be set for the inventory directory.  # This parameter is not applicable if installing on
+# Unix group to be set for the inventory directory.  
+# This parameter is not applicable if installing on
 # Windows based Operating System.
 #-------------------------------------------------------------------------------
 UNIX_GROUP_NAME=oinstall
