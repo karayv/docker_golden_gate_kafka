@@ -11,4 +11,4 @@ COPY gg-install-config.rsp .
 #COPY scripts/startup/* /opt/oracle/scripts/startup/
 
 # Copy GG parameter files
-#COPY dirprm/* /opt/oracle/product/ogg/dirprm/
+COPY dirprm/* ./dirprm/

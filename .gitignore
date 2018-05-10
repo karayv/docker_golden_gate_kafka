@@ -6,5 +6,7 @@
 .project
 .settings
 
-gg-dist/
 db/
+gg-dist/
+gg-bd-dist/
+kogg/

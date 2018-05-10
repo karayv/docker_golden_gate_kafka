@@ -1,11 +1,10 @@
-mkdir -p db/oradata
-mkdir -p db/scripts/setup
-mkdir -p db/scripts/startup
-mkdir -p db/ogg/dirprm
-cp scripts/setup/* db/scripts/setup/
-cp dirprm/* db/ogg/dirprm/
+mkdir -p `pwd`/db/oradata
+mkdir -p `pwd`/db/scripts/setup
+mkdir -p `pwd`/db/scripts/startup
+mkdir -p `pwd`/db/ogg
+cp scripts/setup/* `pwd`/db/scripts/startup/
 
-docker run --name gg \
+docker run --name gg -d \
 -p 1521:1521 -p 5500:5500 \
 -e ORACLE_SID=ORCLCDB \
 -e ORACLE_PDB=ORCLPDB1 \
@@ -15,4 +14,5 @@ docker run --name gg \
 -v `pwd`/db/oradata:/opt/oracle/oradata \
 -v `pwd`/db/scripts/setup:/opt/oracle/scripts/setup \
 -v `pwd`/db/ogg:/opt/oracle/product/ogg \
+--network "gg-network" \
 oradb-gg

@@ -1,0 +1,1 @@
+docker run --name zoo -d --network "gg-network" zookeeper:3.4.11
