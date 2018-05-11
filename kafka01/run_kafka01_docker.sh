@@ -7,5 +7,5 @@ wurstmeister/kafka
 
 sleep 3
 
-docker exec kafka01 kafka-topics.sh --create --zookeeper zoo:2181 --replication-factor 1 --partitions 1 --topic oleg-emp
-docker exec kafka01 kafka-topics.sh --create --zookeeper zoo:2181 --replication-factor 1 --partitions 1 --topic oleg-dept
+docker exec kafka01 kafka-topics.sh --create --zookeeper zoo:2181 --replication-factor 1 --partitions 1 --topic OLEG-EMP
+docker exec kafka01 kafka-topics.sh --create --zookeeper zoo:2181 --replication-factor 1 --partitions 1 --topic OLEG-DEPT

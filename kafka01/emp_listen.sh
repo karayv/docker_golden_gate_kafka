@@ -1,1 +1,1 @@
-docker exec kafka01 kafka-console-consumer.sh --bootstrap-server kafka01:9092 --topic oleg-emp --from-beginning
+docker exec kafka01 kafka-console-consumer.sh --bootstrap-server kafka01:9092 --topic OLEG-EMP --from-beginning

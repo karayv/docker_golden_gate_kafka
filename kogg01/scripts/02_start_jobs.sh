@@ -7,6 +7,7 @@ sleep 3
 
 /kafka/kogg/ggsci << EOF
     STATUS MANAGER
+    ADD REPLICAT riloleg, SPECIALRUN
     ADD REPLICAT rkafka01, EXTTRAIL /kafka/kogg/dirdat/rt
     START rkafka01
     EXIT
