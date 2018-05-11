@@ -3,6 +3,7 @@ docker run --name kafka01 -d \
 -e KAFKA_BROKER_ID=01 \
 -e KAFKA_ZOOKEEPER_CONNECT=zoo \
 --network "gg-network" \
+-v `pwd`/home:/roottmp \
 wurstmeister/kafka
 
 sleep 3
