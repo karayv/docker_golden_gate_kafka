@@ -1,7 +1,10 @@
 FROM oraclelinux
 
-COPY jdk-dist/jdk-8u171-linux-x64.rpm .
-COPY kafka-clients-dist/* /kafka-libs/
+RUN yum update -y
+RUN yum install -y unzip
+
+COPY dist/jdk-8u*-linux-x64.rpm .
+COPY dist/kafka-clients/* /kafka-libs/
 
 RUN rpm -Uhv jdk-8u*.rpm
 

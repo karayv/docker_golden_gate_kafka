@@ -6,10 +6,5 @@
 .project
 .settings
 
-db/
-gg-dist/
-gg-bd-dist/
-kogg/
-jdk-dist/
-kafka-clients-dist/
-home/
+dist/
+volumes/

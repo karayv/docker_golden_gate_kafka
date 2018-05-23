@@ -1,5 +1,5 @@
-REPLICAT rkafka01
-TARGETDB LIBFILE libggjava.so SET property=/kafka/kogg/dirprm/kafka.props
+REPLICAT riloleg
+TARGETDB LIBFILE libggjava.so SET property=/kogg/dirprm/kafka.props
 REPORTCOUNT EVERY 1 MINUTES, RATE
 GROUPTRANSOPS 10000
 SOURCECATALOG ORCLPDB1

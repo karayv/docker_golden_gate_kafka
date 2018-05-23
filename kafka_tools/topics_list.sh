@@ -1,0 +1,1 @@
+docker exec kafka kafka-topics.sh --zookeeper zoo:2181 --list

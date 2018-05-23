@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  ogg:
+    image: oradb-gg
+    build: ogg
+    environment:
+      - ORACLE_SID=ORCLCDB
+      - ORACLE_PDB=ORCLPDB1
+      - ORACLE_PWD=test1
+      - ORACLE_CHARACTERSET=AL32UTF8
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    volumes:
+      - ./volumes/ogg/scripts/startup:/opt/oracle/scripts/startup
+      - ./volumes/ogg/oradata:/opt/oracle/oradata
+      - ./volumes/ogg/dirprm:/opt/oracle/product/ogg/dirprm
+      - ./volumes/ogg/dirrpt:/opt/oracle/product/ogg/dirrpt
+      - ./volumes/ogg/dirdat:/opt/oracle/product/ogg/dirdat
+    container_name: ogg
+    
+  orakafka:
+    build: orakafka
+    image: orakafka
+  
+  kogg:
+    build: kogg
+    image: kafka-gg
+    volumes:
+      - ./volumes/kogg/dirprm:/kogg/dirprm
+      - ./volumes/kogg/dirrpt:/kogg/dirrpt
+      - ./volumes/kogg/dirdat:/kogg/dirdat
+    depends_on:
+      - kafka
+    ulimits:
+      core: 99999999
+    container_name: kogg
+
+  kafka:
+    image: wurstmeister/kafka
+    depends_on: 
+      - zoo
+    environment:
+      - KAFKA_ADVERTISED_HOST_NAME=kafka
+      - KAFKA_ZOOKEEPER_CONNECT=zoo:2181
+    container_name: kafka
+
+  zoo:
+    image: zookeeper:3.4.11
+    container_name: zoo
+    

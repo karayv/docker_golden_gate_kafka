@@ -4,7 +4,7 @@ echo "Starting Oracle Golden Gate extract jobs ..."
     ADD EXTRACT exol01, INTEGRATED TRANLOG, BEGIN NOW
     ADD EXTTRAIL ./dirdat/lt, EXTRACT exol01
     ADD EXTRACT pol01, EXTTRAILSOURCE ./dirdat/lt
-    ADD RMTTRAIL /kafka/kogg/dirdat/rt, EXTRACT pol01
+    ADD RMTTRAIL /kogg/dirdat/rt, EXTRACT pol01
     DBLOGIN USERID c##ggs_admin, PASSWORD ggs_admin
     REGISTER EXTRACT exol01 DATABASE CONTAINER (ORCLPDB1)
     REGISTER EXTRACT eiloleg DATABASE CONTAINER (ORCLPDB1)

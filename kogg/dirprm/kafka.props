@@ -2,9 +2,12 @@
 gg.handlerlist = kafkahandler
 gg.handler.kafkahandler.type=kafka
 gg.handler.kafkahandler.KafkaProducerConfigFile=custom_kafka_producer.properties
+
 #The following resolves the topic name using the short table name
-gg.handler.kafkahandler.TopicName=oleg
+gg.handler.kafkahandler.topicMappingTemplate=${schemaName}-${tableName}
+
 #The following selects the message key using the concatenated primary keys
+gg.handler.kafkahandler.keyMappingTemplate=${primaryKeys}
 gg.handler.kafkahandler.format=json
 gg.handler.kafkahandler.SchemaTopicName=mySchemaTopic
 gg.handler.kafkahandler.BlockingSend =false
@@ -22,10 +25,7 @@ gg.log.level=INFO
 
 gg.report.time=30sec
 
-#Sample gg.classpath for Apache Kafka
 gg.classpath=dirprm/:/kafka-libs/*
-#Sample gg.classpath for HDP
-#gg.classpath=/etc/kafka/conf:/usr/hdp/current/kafka-broker/libs/*
 
-javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=/kafka/kogg/ggjava/ggjava.jar 
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=/kogg/ggjava/ggjava.jar 
 

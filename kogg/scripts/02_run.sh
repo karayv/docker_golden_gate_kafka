@@ -1,16 +1,19 @@
 echo "Starting Oracle Golden Gate replicat..."
-/kafka/kogg/ggsci << EOF
+
+cp -r /root/dirprm/* /kogg/dirprm/
+
+/kogg/ggsci << EOF
     START MGR
 EOF
 
 sleep 3
 
-/kafka/kogg/ggsci << EOF
+/kogg/ggsci << EOF
     STATUS MANAGER
     ADD REPLICAT riloleg, SPECIALRUN
-    ADD REPLICAT rkafka01, EXTTRAIL /kafka/kogg/dirdat/rt
+    ADD REPLICAT rkafka01, EXTTRAIL /kogg/dirdat/rt
     START rkafka01
     EXIT
 EOF
 
-bash
+tail -f /dev/null
