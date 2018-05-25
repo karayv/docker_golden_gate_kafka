@@ -20,6 +20,7 @@ Refer to https://github.com/oracle/docker-images/tree/master/OracleDatabase/Sing
 docker-compose build
 docker-compose up
 ```
+Folder `volumes` contain logs, parameter files, data files, and other.
 
 ## Perform checks
 Start listening a topic
